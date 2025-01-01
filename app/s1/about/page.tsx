@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 "use client";
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
@@ -16,25 +17,25 @@ export type Leads = {
 };
 
 const Page: React.FC = () => {
-  const [leads, setLeads] = useState<Leads[] | []>([]);
+  // const [leads, setLeads] = useState<Leads[] | []>([]);
   const [loading, setLoading] = useState(true);
 
-  useEffect(() => {
-    const fetchLeads = async () => {
-      try {
-        const response = await fetch("/api/get-leads-info");
-        const data = await response.json();
-        console.log("data: ", data);
-        setLeads(data);
-      } catch (error) {
-        console.log("Error fetching leads info: ", error);
-      } finally {
-        setLoading(false);
-      }
-    };
+  // useEffect(() => {
+  //   const fetchLeads = async () => {
+  //     try {
+  //       const response = await fetch("/api/get-leads-info");
+  //       const data = await response.json();
+  //       console.log("data: ", data);
+  //       setLeads(data);
+  //     } catch (error) {
+  //       console.log("Error fetching leads info: ", error);
+  //     } finally {
+  //       setLoading(false);
+  //     }
+  //   };
 
-    fetchLeads();
-  }, []);
+  //   fetchLeads();
+  // }, []);
 
   return (
     <S1BaseLayout>
@@ -79,7 +80,7 @@ const Page: React.FC = () => {
                 </div>
               </div>
             </div>
-            <div className="grid justify-center">
+            {/* <div className="grid justify-center">
               <div className="grid grid-cols-2 gap-6 items-center justify-center gap-4 mb-6 px-6">
                 {leads.map((lead) => (
                   <LeadsInfo
@@ -91,7 +92,7 @@ const Page: React.FC = () => {
                   />
                 ))}
               </div>
-            </div>
+            </div> */}
           </>
         )}
       </div>
